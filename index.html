@@ -344,6 +344,7 @@ body {
 
 /* Code panel content */
 .code-block {
+  position: relative;
   background: var(--bg-tertiary);
   border: 1px solid var(--border);
   border-radius: 6px;
@@ -356,6 +357,17 @@ body {
   color: var(--text-muted);
   margin-bottom: 10px;
 }
+.code-block .copy-btn {
+  position: absolute; top: 10px; right: 10px;
+  background: var(--bg-secondary); border: 1px solid var(--border);
+  border-radius: 4px; padding: 4px 8px;
+  cursor: pointer; font-size: 11px; line-height: 1;
+  color: var(--text-muted); transition: all 0.15s;
+  opacity: 0;
+}
+.code-block:hover .copy-btn { opacity: 1; }
+.code-block .copy-btn:hover { color: var(--text-primary); border-color: var(--accent); }
+.code-block .copy-btn.copied { color: var(--status-2xx); border-color: var(--status-2xx); opacity: 1; }
 .code-block pre {
   font-family: var(--font-mono);
   font-size: 12px; line-height: 1.6;
@@ -539,6 +551,16 @@ function closeSidebar() {
 // Render helpers
 // ============================================================
 function esc(s) { const d = document.createElement('div'); d.textContent = s; return d.innerHTML; }
+
+function copyCode(btn) {
+  const pre = btn.parentElement.querySelector('pre');
+  const text = pre.textContent;
+  navigator.clipboard.writeText(text).then(() => {
+    btn.textContent = 'Copied!';
+    btn.classList.add('copied');
+    setTimeout(() => { btn.textContent = 'Copy'; btn.classList.remove('copied'); }, 1500);
+  });
+}
 function opId(method, path) { return `${method}-${path.replace(/[^a-zA-Z0-9]/g, '-')}`; }
 function highlightPath(path) { return esc(path).replace(/\{([^}]+)\}/g, '<span class="param">{$1}</span>'); }
 function statusClass(code) {
@@ -762,11 +784,13 @@ async function render() {
 
       mainHtml += `<div class="code-panel">
         <div class="code-block">
+          <button class="copy-btn" onclick="copyCode(this)">Copy</button>
           <div class="label">Request</div>
           <pre>${curl}</pre>
         </div>`;
       if (respExample) {
         mainHtml += `<div class="code-block">
+          <button class="copy-btn" onclick="copyCode(this)">Copy</button>
           <div class="label">Response</div>
           <pre>${respExample}</pre>
         </div>`;
