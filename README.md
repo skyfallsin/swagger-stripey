@@ -2,9 +2,8 @@
   <h1>swagger-stripey</h1>
   <p><strong>Stripe-style API docs from any OpenAPI spec. One HTML file. Zero dependencies.</strong></p>
   <p>
-    <a href="https://opensource.org/licenses/MIT"><img src="https://img.shields.io/badge/license-MIT-blue" alt="License" /></a>
-    <a href="#"><img src="https://img.shields.io/badge/dependencies-0-brightgreen" alt="Zero deps" /></a>
-    <a href="#"><img src="https://img.shields.io/badge/size-~28KB-orange" alt="Size" /></a>
+    <a href="LICENSE"><img src="https://img.shields.io/badge/License-MIT-yellow.svg" alt="License: MIT" /></a>
+    <a href="https://github.com/skyfallsin/swagger-stripey/stargazers"><img src="https://img.shields.io/github/stars/skyfallsin/swagger-stripey" alt="GitHub stars" /></a>
   </p>
 </div>
 
