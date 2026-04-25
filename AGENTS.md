@@ -70,6 +70,7 @@ It does **not** handle:
 - XML request/response bodies
 - OAuth flow rendering
 - Webhooks / callbacks
+- Non-OpenAPI formats (GraphQL, Protobuf, RAML, API Blueprint, etc.) — convert to OpenAPI first, then point swagger-stripey at the JSON. Conversion tools exist for all major formats.
 
 ### Code Style
 
