@@ -36,11 +36,11 @@ That's it. It reads `./openapi.json` by default.
 
 Dark mode:
 
-![Dark mode](screenshots/dark.png)
+![Dark mode](screenshots/dark.jpg)
 
 Light mode:
 
-![Light mode](screenshots/light.png)
+![Light mode](screenshots/light.jpg)
 
 ## Customization
 
