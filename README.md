@@ -32,6 +32,12 @@ python3 -m http.server 8080
 
 That's it. It reads `./openapi.json` by default.
 
+If you use a coding agent (Claude, Cursor, Copilot, etc.), just point it at this repo:
+
+> Add Stripe-style API docs using https://github.com/skyfallsin/swagger-stripey — read the AGENTS.md in that repo.
+
+The agent will handle the rest.
+
 ## Screenshots
 
 Dark mode:
