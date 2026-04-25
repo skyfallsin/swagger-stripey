@@ -14,15 +14,9 @@ Drop a single HTML file next to your `openapi.json` and get beautiful three-pane
 
 No build step. No npm install. No React. No paid SaaS branding in the footer.
 
-## Origin Story
+## Origin
 
-We maintain [camofox-browser](https://github.com/jo-inc/camofox-browser), a headless browser server with 31 REST endpoints. A contributor opened a PR with a hand-written 518-line OpenAPI spec — nice work, but it would drift the moment anyone added a route.
-
-So we wired up `swagger-jsdoc` to auto-generate the spec from JSDoc annotations. That solved the drift problem, but we still needed docs. Every existing option — Swagger UI, Redoc, Scalar, Stoplight Elements — either looked dated, had paid product branding in the footer, or required a build pipeline.
-
-We wanted Stripe-style three-panel docs. So we built it: one HTML file that reads any `openapi.json` and renders it client-side. Dark mode, light mode, responsive, customizable colors and fonts via a JSON config block. No dependencies, no framework, no bundler.
-
-Turned out pretty well, so we extracted it.
+Extracted from [camofox-browser](https://github.com/jo-inc/camofox-browser), where we needed API docs that didn't come with paid product branding.
 
 ## Quick Start
 
